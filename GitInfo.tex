@@ -65,6 +65,8 @@ This is not a command; it's a file in the root directory that git looks at to se
 	doc/**/*.pdf	
 \end{verbatim}
 
+\paragraph{git diff} This lets you know what lines have been changed to a modified file since its last staging. This means the file was added to the stage files, and then edited. You can see the difference between what is going to be committed and the file as it is in this moment after the changing. To compare the last commit to the staged changes the command is \textbf{git diff -{}-staged}.
+
 \paragraph{git branch $<$newBranchName$>$}
 This creates a local checkpoint technically called a \emph{reference} with the given \textbf{newBranchName}. A branch is an active line of development. The most recent commit on a branch is referred as the tip of that branch.
 
