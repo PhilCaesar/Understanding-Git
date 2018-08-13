@@ -48,7 +48,22 @@ This will print some basic information, such as which files have recently been m
 This adds \textbf{fileName} to the staged files that will be committed once the \textbf{commit} command is called. It's a multipurpose command: tracks new files, stages modified tracked files, and other things. Think as ``it adds precisely this content to the next commit''. There's the possibility of adding all the files in a directory; instead of inserting the file name, just insert the directory name in the \textbf{fileName} field. 
 
 \paragraph{.gitignore}
-This is not a command; it's a file in the repository that git looks at to see if some of the files in that repository have to be shown (as \emph{untracked}) or not when calling the \textbf{status} command.
+This is not a command; it's a file in the root directory that git looks at to see if some of the files in that repository have to be shown (as \emph{untracked}) or not when calling the \textbf{status} command. A .gitignore file is a sequence of rules that prevent files to be looked at. An example (the text after the pound symbol is ignored):
+\begin{verbatim}
+	#ignore all .a files in this directory
+	*.a
+	#but do track lib.a, even though you're ignoring .a files above
+	!lib.a
+	#ignore TODO file in this directory
+	/TODO
+	#ignore all files in the build directory
+	build/
+	#ignore all the txt files in the subdirectory doc,
+	#but not the subdirectory doc/server
+	doc/*.txt
+	#ignore all pdf files in doc and all its subdirectories
+	doc/**/*.pdf	
+\end{verbatim}
 
 \paragraph{git branch $<$newBranchName$>$}
 This creates a local checkpoint technically called a \emph{reference} with the given \textbf{newBranchName}. A branch is an active line of development. The most recent commit on a branch is referred as the tip of that branch.
