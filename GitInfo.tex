@@ -1,0 +1,75 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
+\usepackage{lipsum} %This package just generates Lorem Ipsum filler text. 
+\usepackage{fullpage} % changes the margin
+\usepackage{indentfirst}
+
+\begin{document}
+%Header-Make sure you update this information!!!!
+\noindent
+\large\textbf{Understanding Git} \hfill \textbf{Filippo Cesaratto} \\
+\normalsize
+
+\section*{What is git?}
+Git is a type of \textbf{version control system} (VCS) that makes it easier to track changes to files. For example, when you edit a file, git can help you determine exactly \emph{what} changed, \emph{who} changed it, and why.
+
+It's useful for coordinating work among multiple people on a project, and for tracking progress over time by saving ``checkpoints''. 
+
+\section*{The three states}
+\paragraph{Committed} This means that the data is safely stored in your local database.
+\paragraph{Modified} This means that you have changed your file, but have not committed it to your database yet.
+\paragraph{Staged} This means that yo have marked a modified file in its current version to go into your next commit snapshot.
+
+\section*{Common commands}
+Below is a series of basic commands with descriptions of what they each do.
+
+\paragraph{git init}
+This starts your own \emph{repository}\footnote{Git stores information about changes of the local (in the folder $F$ where git is initialized) files in a data structure called a \emph{repository}. This \emph{repository} is stored in a \emph{.git} directory inside the folder $F$ that is called the \emph{working directory}.} from scratch in any existing folder on your computer.
+
+\paragraph{git clone https://github.com/cooperka/emoji-commit-messages.git}
+This downloads an existing repository from the internet to your computer and extract the latest \emph{snapshot}\footnote{Everytime you \emph{commit}\footnotemark{} to a git repository, you are saving a snapshot of all the files in that moment.}\footnotetext{\emph{Commits} record changes of the files in the working directory to the repository.}. By default it will be saved in the same folder where your repository is in, using the same name as the downloading snapshot (in this case: emoji-commit-messages).
+
+The specified URL is called the \emph{remote origin} (the place where the files were originally downloaded from).
+
+\paragraph{git status}
+This will print some basic information, such as which files have recently been modified.
+
+\paragraph{git branch $<$newBranchName$>$}
+This creates a local checkpoint technically called a \emph{reference} with the given \textbf{newBranchName}. A branch is an active line of development. The most recent commit on a branch is referred as the tip of that branch.
+
+\paragraph{git checkout $<$existingBranchName$>$}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
