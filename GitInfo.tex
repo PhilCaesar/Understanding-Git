@@ -5,10 +5,12 @@
 \usepackage{indentfirst}
 \usepackage{graphicx}
 \graphicspath{{./images/}}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=cyan]{hyperref}
+
 \begin{document}
 %Header-Make sure you update this information!!!!
 \noindent
-\large\textbf{Understanding Git} \hfill \textbf{Filippo Cesaratto} \\
+\large\textbf{Understanding Git\footnote{\url{https://github.com/progit/progit2/releases/download/2.1.82/progit.pdf}}} \hfill \textbf{Filippo Cesaratto} \\
 \normalsize
 
 \section*{What is git?}
@@ -19,7 +21,7 @@ It's useful for coordinating work among multiple people on a project, and for tr
 \section*{The three states}
 Each file in the \emph{working directory} can be in one of these two states: \emph{tracked} or \emph{untracked}. Tracked files are the files that git knows about. In fact these files had to be present in the last \emph{snapshot} git took, and can have one of these three possible states:
 \paragraph{Committed/Unmodified} This means that the data is safely stored in your local database.
-\paragraph{Modified} This means that you have changed your file, but have not committed it to your database yet.
+\paragraph{Modified} This means that you have changed your file, but have not committed it to your database yet. You have to use the command \textbf{add} to \emph{stage} it.
 \paragraph{Staged} This means that you have marked a modified file in its current version to go into your next commit snapshot.
 
 \vspace*{5mm}
@@ -34,13 +36,19 @@ Below is a series of basic commands with descriptions of what they each do.
 \paragraph{git help $<$command$>$} This opens the browser and displays information about the given \textbf{command}. If a refresher is all that it's needed, just type: \textbf{git $<$command$>$ -h}.
 
 \paragraph{git init}
-This starts your own \emph{repository} from scratch in any existing folder on your computer. Git stores information about changes of the local (in the folder $F$ where git is initialized) files in a data structure called a \emph{repository}. This \emph{repository} is stored in a \emph{.git} directory inside the folder $F$ that is called the \emph{working directory}. No file of the folder $F$ is tracked yet.
+This starts your own \emph{repository} from scratch in any existing directory on your computer. Git stores information about changes of the local (in the directory $D$ where git is initialized) files in a data structure called a \emph{repository}. This \emph{repository} is stored in a \emph{.git} directory inside the directory $D$ that is called the \emph{working directory}. No file of the directory $D$ is tracked yet.
 
-\paragraph{git clone $<$URL$>$ [$<$FolderName$>$]}
-This downloads an existing repository from the internet to your computer and extract the latest \emph{snapshot}. Almost all the files are downloaded so there is the possibility to open a previous snapshot of the downloaded project. By default it will be saved in the same folder where your repository is in, using the same name as the downloading snapshot, but if the optional parameter \textbf{$<$FolderName$>$} is given, then that would be its name.
+\paragraph{git clone $<$URL$>$ [$<$directoryName$>$]}
+This downloads an existing repository from the internet to your computer and extract the latest \emph{snapshot}. Almost all the files are downloaded so there is the possibility to open a previous snapshot of the downloaded project. By default it will be saved in the same directory where your repository is in, using the same name as the downloading snapshot, but if the optional parameter \textbf{directoryName} is given, then that would be its name.
 
 \paragraph{git status}
-This will print some basic information, such as which files have recently been modified.
+This will print some basic information, such as which files have recently been modified. An option to shorten its content is \textbf{git status -s}.
+
+\paragraph{git add $<$fileName$>$}
+This adds \textbf{fileName} to the staged files that will be committed once the \textbf{commit} command is called. It's a multipurpose command: tracks new files, stages modified tracked files, and other things. Think as ``it adds precisely this content to the next commit''. There's the possibility of adding all the files in a directory; instead of inserting the file name, just insert the directory name in the \textbf{fileName} field. 
+
+\paragraph{.gitignore}
+This is not a command; it's a file in the repository that git looks at to see if some of the files in that repository have to be shown (as \emph{untracked}) or not when calling the \textbf{status} command.
 
 \paragraph{git branch $<$newBranchName$>$}
 This creates a local checkpoint technically called a \emph{reference} with the given \textbf{newBranchName}. A branch is an active line of development. The most recent commit on a branch is referred as the tip of that branch.
