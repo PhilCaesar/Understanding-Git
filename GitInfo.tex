@@ -67,7 +67,7 @@ This is not a command; it's a file in the root directory that git looks at to se
 
 \paragraph{git diff} This lets you know what lines have been changed to a modified file since its last staging. This means the file was added to the stage files, and then edited. You can see the difference between what is going to be committed (\emph{staged} file) and the file as it is in this moment after the changing (\emph{modified} file). To compare the last commit (\emph{unmodified} file) to the staged changes (\emph{staged} file) the command is \textbf{git diff -{}-staged}. This doesn't look at the modified file that is not staged yet.
 
-\paragraph{git commit} This commits all the \emph{staged} files. This means that those staged files and all the previously committed files (but not staged) will be inserted in a \emph{snapshot} of the project
+\paragraph{git commit} This commits all the \emph{staged} files. This means that those staged files and all the previously committed files (but not staged) will be inserted in a \emph{snapshot} of the project. Adding a \textbf{-v} option will insert a \textbf{git diff -{}-staged} in the message so you can see exactly the changes you're committing.
 
 \paragraph{git branch $<$newBranchName$>$}
 This creates a local checkpoint technically called a \emph{reference} with the given \textbf{newBranchName}. A branch is an active line of development. The most recent commit on a branch is referred as the tip of that branch.
