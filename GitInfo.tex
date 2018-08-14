@@ -79,9 +79,9 @@ The first removes all the \verb|.log| files inside the directory \verb|log/| (th
 
 \paragraph{git mv $<$oldFileName$>$ $<$newFileName$>$} This changes the name of a file. This \textbf{newFileName} will be \emph{staged}, ready to be committed. Git doesn't keep track of file movement, so if this command is not used, \textbf{oldFileName} has to be removed, and then \textbf{newFileName} has to be added. If a file has its name changed in the explorer window, there's the needing of remove and add the same file with different names.
 
+\paragraph{git log} This lists all the commits that were made in reverse chronological order. Lots of options for this command (\textbf{git help log}). One of the more used is the \textbf{-p} option that shows all the changes introduced in each commit (\textbf{git diff} attached to the main log). To show only the last $n$ entries, the option is \textbf{-$n$} (e.g., \textbf{-3} for the last 3 entries). The \textbf{-{}-stat} option shows some stats of the logs (number of changed files and lines). The option \textbf{-S $<$text$>$} only shows logs of changed \textbf{text} for two different \emph{commits}.
 
-
-
+\paragraph{Undoing things}
 
 
 \paragraph{git branch $<$newBranchName$>$}
