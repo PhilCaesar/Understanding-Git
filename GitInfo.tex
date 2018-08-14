@@ -6,7 +6,8 @@
 \usepackage{graphicx}
 \graphicspath{{./images/}}
 \usepackage[colorlinks=true,linkcolor=black,urlcolor=cyan]{hyperref}
-
+\usepackage{fancyvrb}
+\newcommand{\myTilde}{$\sim$}
 \begin{document}
 %Header-Make sure you update this information!!!!
 \noindent
@@ -69,9 +70,14 @@ This is not a command; it's a file in the root directory that git looks at to se
 
 \paragraph{git commit} This commits all the \emph{staged} files. This means that those staged files and all the previously committed files (but not staged) will be inserted in a \emph{snapshot} of the project. Adding a \textbf{-v} option will insert a \textbf{git diff -{}-staged} in the message so you can see exactly the changes you're committing. Another option is \textbf{-m} that lets you type the message between quotation marks without opening the text editor. There's an option to skip the \emph{stage} phase for files that are already tracked: \textbf{-a}. This means that \emph{modified} files can directly go to the \emph{committed}/\emph{unmodified} files without them being \emph{staged}, hence without using the \textbf{add} command.
 
-\paragraph{git rm $<$nomeFile$>$} This removes the file \textbf{nomeFile} from the tracked list and from the directory. If \textbf{nomeFile} is a staged file, its removal has to be forced using the \textbf{-f} option. If you're only interested in not keeping track of it anymore, but you wish the file to be not deleted, just add the option \textbf{-{}-cached}.
+\paragraph{git rm $<$fileName$>$} This removes the file \textbf{fileName} from the tracked list and from the directory. If \textbf{fileName} is a staged file, its removal has to be forced using the \textbf{-f} option. If you're only interested in not keeping track of it anymore, but you wish the file to be not deleted, just add the option \textbf{-{}-cached}. This is particularly useful if you forgot to add something to your \textbf{.gitignore} file. Instead of a file, \textbf{fileName} could be a directory or file patterns; two example could be:
+\begin{Verbatim}[commandchars=+\[\]]
+   $ git rm log/\*.log
+   $ git rm \*+myTilde
+\end{Verbatim}
+The first removes all the \verb|.log| files inside the directory \verb|log/| (the backslash \verb|\| is needed because git has its own interpreter), whilst the second removes all the files whose names end with a $\sim$.
 
-
+\paragraph{git mv $<$oldFileName$>$ $<$newFileName$>$} This changes the name of a file. This \textbf{newFileName} will be \emph{staged}, ready to be committed. Git doesn't keep track of file movement, so if this command is not used, \textbf{oldFileName} has to be removed, and then \textbf{newFileName} has to be added. If a file has its name changed in the explorer window, there's the needing of remove and add the same file with different names.
 
 
 
