@@ -81,7 +81,23 @@ The first removes all the \verb|.log| files inside the directory \verb|log/| (th
 
 \paragraph{git log} This lists all the commits that were made in reverse chronological order. Lots of options for this command (\textbf{git help log}). One of the more used is the \textbf{-p} option that shows all the changes introduced in each commit (\textbf{git diff} attached to the main log). To show only the last $n$ entries, the option is \textbf{-$n$} (e.g., \textbf{-3} for the last 3 entries). The \textbf{-{}-stat} option shows some stats of the logs (number of changed files and lines). The option \textbf{-S $<$text$>$} only shows logs of changed \textbf{text} for two different \emph{commits}.
 
-\paragraph{Undoing things}
+\paragraph{git commit -{}-amend} This commit takes your staging files and uses them for the commit. This new commit deletes the previous one and writes its own. This is useful if you forgot some minor changes that you can do and commit without typing in the message something like ``Typo corrected''.
+
+\paragraph{git reset HEAD $<$fileName$>$} This is useful when you've changed two files and both are wrongly added to the staging area, but you don't want to make a single commit for those two changes. This requires to remove the staged status from one of these files (\textbf{fileName}). This unstages the file.
+
+\paragraph{Unmodifying a modified file}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \paragraph{git branch $<$newBranchName$>$}
