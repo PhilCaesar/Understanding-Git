@@ -85,7 +85,7 @@ The first removes all the \verb|.log| files inside the directory \verb|log/| (th
 
 \paragraph{git reset HEAD $<$fileName$>$} This is useful when you've changed two files and both are wrongly added to the staging area, but you don't want to make a single commit for those two changes. This requires to remove the staged status from one of these files (\textbf{fileName}). This unstages the file.
 
-\paragraph{Unmodifying a modified file}
+\paragraph{git checkout -{}- $<$fileName$>$} This unmodifies \textbf{fileName} deleting it and reapplying its previous \emph{committed} status. Any changes made to the file are gone for good.
 
 
 
