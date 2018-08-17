@@ -93,7 +93,9 @@ The first removes all the \verb|.log| files inside the directory \verb|log/| (th
 
 \paragraph{git fetch $<$nickName$>$} Using the \textbf{nickName} previously given to the on-line repository, this downloads commits, files and refs from a remote repository into your local one. You use this command when you want to see what everybody else has been working on. It doesn't merge the changes into your repository. Fetching is a safe way to review commits before integrating them with your local repository.
 
-%\paragraph{git push}
+\paragraph{git push $<$nickName$>$ $<$branch$>$} This command saves the \textbf{branch} of your local repository (e.g. \textbf{master}) to the \textbf{nickName} on-line one. There is the possibility that this command fails if someone else has made changes that are not \textbf{fetched} yet.
+
+\paragraph{git remote show $<$nickName$>$} This shows the URL and the tracking branch information.
 
 
 
