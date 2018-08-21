@@ -103,12 +103,16 @@ The first removes all the \verb|.log| files inside the directory \verb|log/| (th
 
 \paragraph{git remote remove $<$nickName$>$} This lets you remove a \textbf{nickName} from the server. Once you delete the reference to a remote this way, all remote-tracking branches and configuration settings associated with that remote are also deleted. 
 
+
 \section*{Tagging commands}
 
 \paragraph{git tag} This command lists the tags in alphabetical order. An optional parameter is \textbf{-l $<$tagName$>$} as for example \textbf{-l \texttt{"{}}v1.5*\texttt{"{}}} that lists all the tags that starts with the given \emph{tagName} (v1.5.1, v1.5.2, etc).
 
 \paragraph{git tag -a $<$tagName$>$ -m $<$message$>$} This command creates an \emph{annotated} tag named \textbf{tagName} and attach the \textbf{message} to it. \emph{Annotated} tags are stored as full objects in the repository. They are checksummed; contain the tagger name, email, and date; have a tagging message; and can be signed and verified with GNU Privacy Guard.
 
+\paragraph{git tag $<$tagName$>$} This creates a \emph{lightweight} tag named \textbf{tagName}. \emph{Lightweight} tags are just pointers to specific commits.
+
+\paragraph{git show $<$tagName$>$} This shows the tag data along with the commit that was tagged.
 
 
 
