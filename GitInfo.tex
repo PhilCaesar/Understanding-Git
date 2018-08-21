@@ -87,6 +87,18 @@ The first removes all the \verb|.log| files inside the directory \verb|log/| (th
 
 \paragraph{git checkout -{}- $<$fileName$>$} This unmodifies \textbf{fileName} deleting it and reapplying its previous \emph{committed} status. Any changes made to the file are gone for good.
 
+
+\section*{Tag commands}
+
+\paragraph{git tag} This command lists the tags in alphabetical order. An optional parameter is \textbf{-l $<$tagName$>$} as for example \textbf{-l \texttt{"{}}v1.5*\texttt{"{}}} that lists all the tags that starts with the given \emph{tagName} (v1.5.1, v1.5.2, etc).
+
+\paragraph{git tag -a $<$tagName$>$ -m $<$message$>$} This command creates an \emph{annotated} tag named \textbf{tagName} and attach the \textbf{message} to it. \emph{Annotated} tags are stored as full objects in the repository. They are checksummed; contain the tagger name, email, and date; have a tagging message; and can be signed and verified with GNU Privacy Guard. If you forgot to tag a previous commit, you just have to add part of its checksum as a parameter. First of all, type: \textbf{git log -{}-pretty=oneline} that shows all the commits with their own checksums; then use the command \textbf{git tag -a $<$tagName$>$ -m $<$message$>$ $<$checksum$>$}, where \textbf{checksum} is the first part of the checksum (few hex numbers) that is shown from the \textbf{log} command.
+
+\paragraph{git tag $<$tagName$>$} This creates a \emph{lightweight} tag named \textbf{tagName}. \emph{Lightweight} tags are just pointers to specific commits.
+
+\paragraph{git show $<$tagName$>$} This shows the tag data along with the commit that was tagged.
+
+
 \section*{Remote repository commands}
 
 \paragraph{git remote add $<$nickName$>$ $<$URL$>$}  This adds a new remote git repository. The \textbf{nickName} parameter is used for easily reference that on-line repository. This reference is created once and there is no need to reconnect to the on-line repository.
@@ -97,36 +109,13 @@ The first removes all the \verb|.log| files inside the directory \verb|log/| (th
 
 \paragraph{git push $<$nickName$>$ $<$branch$>$} This command saves the \textbf{branch} of your local repository (e.g. \textbf{master}) to the \textbf{nickName} on-line one. There is the possibility that this command fails if someone else has made changes that are not \textbf{fetched} yet.
 
+\paragraph{git push $<$nickName$>$ $<$tagName$>$} This command adds the tag that you have in your local repository to the shared one. If you want to add all the tags instead of just \textbf{$<$tagName$>$}, you have to type \textbf{-{}-tags}.
+
 \paragraph{git remote show $<$nickName$>$} This shows the URL and the tracking branch information.
 
 \paragraph{git remote rename $<$nickName$>$ $<$newNickName$>$} This changes the remote-tracking \emph{nick name}.
 
 \paragraph{git remote remove $<$nickName$>$} This lets you remove a \textbf{nickName} from the server. Once you delete the reference to a remote this way, all remote-tracking branches and configuration settings associated with that remote are also deleted. 
-
-
-\section*{Tagging commands}
-
-\paragraph{git tag} This command lists the tags in alphabetical order. An optional parameter is \textbf{-l $<$tagName$>$} as for example \textbf{-l \texttt{"{}}v1.5*\texttt{"{}}} that lists all the tags that starts with the given \emph{tagName} (v1.5.1, v1.5.2, etc).
-
-\paragraph{git tag -a $<$tagName$>$ -m $<$message$>$} This command creates an \emph{annotated} tag named \textbf{tagName} and attach the \textbf{message} to it. \emph{Annotated} tags are stored as full objects in the repository. They are checksummed; contain the tagger name, email, and date; have a tagging message; and can be signed and verified with GNU Privacy Guard.
-
-\paragraph{git tag $<$tagName$>$} This creates a \emph{lightweight} tag named \textbf{tagName}. \emph{Lightweight} tags are just pointers to specific commits.
-
-\paragraph{git show $<$tagName$>$} This shows the tag data along with the commit that was tagged.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 \section*{Branching}
