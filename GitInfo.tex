@@ -31,7 +31,7 @@ Each file in the \emph{working directory} can be in one of these two states: \em
 	\includegraphics{FilesStates}
 \end{figure}
 
-\section*{Common commands}
+\section*{Basic commands}
 Below is a series of basic commands with descriptions of what they each do.
 
 \paragraph{git help $<$command$>$} This opens the browser and displays information about the given \textbf{command}. If a refresher is all that it's needed, just type: \textbf{git $<$command$>$ -h}.
@@ -87,6 +87,8 @@ The first removes all the \verb|.log| files inside the directory \verb|log/| (th
 
 \paragraph{git checkout -{}- $<$fileName$>$} This unmodifies \textbf{fileName} deleting it and reapplying its previous \emph{committed} status. Any changes made to the file are gone for good.
 
+\section*{Remote repository commands}
+
 \paragraph{git remote add $<$nickName$>$ $<$URL$>$}  This adds a new remote git repository. The \textbf{nickName} parameter is used for easily reference that on-line repository. This reference is created once and there is no need to reconnect to the on-line repository.
 
 \paragraph{git remote} This alone shows if there are remote repositories linked to the off-line one. Adding the option \textbf{-v}, it shows the URL of this repository with information about the \emph{push} and \emph{fetch} options (writing and reading respectively).
@@ -101,7 +103,11 @@ The first removes all the \verb|.log| files inside the directory \verb|log/| (th
 
 \paragraph{git remote remove $<$nickName$>$} This lets you remove a \textbf{nickName} from the server. Once you delete the reference to a remote this way, all remote-tracking branches and configuration settings associated with that remote are also deleted. 
 
-\paragraph{Tagging}
+\section*{Tagging commands}
+
+\paragraph{git tag} This command lists the tags in alphabetical order. An optional parameter is \textbf{-l $<$tagName$>$} as for example \textbf{-l \texttt{"{}}v1.5*\texttt{"{}}} that lists all the tags that starts with the given \emph{tagName} (v1.5.1, v1.5.2, etc).
+
+\paragraph{git tag -a $<$tagName$>$ -m $<$message$>$} This command creates an \emph{annotated} tag named \textbf{tagName} and attach the \textbf{message} to it. \emph{Annotated} tags are stored as full objects in the repository. They are checksummed; contain the tagger name, email, and date; have a tagging message; and can be signed and verified with GNU Privacy Guard.
 
 
 
@@ -119,8 +125,7 @@ The first removes all the \verb|.log| files inside the directory \verb|log/| (th
 
 
 
-
-
+\section*{Branching}
 
 \paragraph{git branch $<$newBranchName$>$}
 This creates a local checkpoint technically called a \emph{reference} with the given \textbf{newBranchName}. A branch is an active line of development. The most recent commit on a branch is referred as the tip of that branch.
