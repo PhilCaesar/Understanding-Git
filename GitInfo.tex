@@ -119,6 +119,11 @@ The first removes all the \verb|.log| files inside the directory \verb|log/| (th
 
 
 \section*{Branching}
+Branching means you diverge from the main line of development and continue to do work without messing with that main line. When you add a file to the \emph{staging area}, this file is \emph{snapshotted}. Then, when you make a commit, git stores pointers to those files' \emph{snapshots}. Additional information, such as the author's name and email address, and the typed message, is added.
+
+The committed objects also contain pointers to the commit or commits that directly came before this commit (its parent or parents): zero parents for the initial commit, one parent for a normal commit, and multiple parents for a commit that results from a merge of two or more branches.
+
+
 
 \paragraph{git branch $<$newBranchName$>$}
 This creates a local checkpoint technically called a \emph{reference} with the given \textbf{newBranchName}. A branch is an active line of development. The most recent commit on a branch is referred as the tip of that branch.
